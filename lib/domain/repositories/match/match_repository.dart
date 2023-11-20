@@ -24,4 +24,12 @@ class MatchRepository {
       return null;
     }
   }
+
+  Future<void> playWithAI(int id) async {
+    try {
+      await api.playWithAi(id);
+    } on DioException catch (e) {
+      print(ApiException.fromDioException(e).message);
+    }
+  }
 }

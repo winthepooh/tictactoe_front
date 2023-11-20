@@ -10,4 +10,5 @@ class Paths {
   static const String REGISTER = '/register';
   static const String HISTORY = '/history';
   static const String SELECTMODE = '/selectmode';
+  static const String PLAYAI = '/playai';
 }

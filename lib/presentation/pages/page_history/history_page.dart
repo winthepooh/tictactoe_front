@@ -26,9 +26,10 @@ class HistoryPage extends GetView<HistoryPageController> {
               ),
               Expanded(
                   child: Obx(
-                () => GridView.count(
-                  crossAxisCount: 3,
-                  children: controller.items.value,
+                () => SingleChildScrollView(
+                  child: Column(
+                    children: controller.items.value,
+                  ),
                 ),
               ))
             ],

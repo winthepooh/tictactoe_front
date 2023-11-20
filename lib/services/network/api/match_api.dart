@@ -18,4 +18,14 @@ class MatchApi {
       rethrow;
     }
   }
+
+  Future<Response<dynamic>> playWithAi(int id) async {
+    try {
+      final response = await apiClient
+          .post<dynamic>(ApiEndpoint.match_playwithai, data: {"winner_id": id});
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
