@@ -3,6 +3,8 @@ import 'package:tictactoe/presentation/pages/page_history/controller/history_pag
 import 'package:tictactoe/presentation/pages/page_history/history_page.dart';
 import 'package:tictactoe/presentation/pages/page_login/controller/login_page_controller.dart';
 import 'package:tictactoe/presentation/pages/page_login/login_page.dart';
+import 'package:tictactoe/presentation/pages/page_multiplayer/controller/multiplayer_page_controller.dart';
+import 'package:tictactoe/presentation/pages/page_multiplayer/multiplayer_page.dart';
 import 'package:tictactoe/presentation/pages/page_playai/controller/playai_page_controller.dart';
 import 'package:tictactoe/presentation/pages/page_playai/playai_page.dart';
 import 'package:tictactoe/presentation/pages/page_register/controller/register_page_controller.dart';
@@ -49,6 +51,13 @@ class AppPages {
           page: () => const PlayAiPlage(),
           binding: BindingsBuilder(() {
             Get.lazyPut<PlayAiPageController>(PlayAiPageController.new);
+          })),
+      GetPage(
+          name: Paths.MULTIPLAYER,
+          page: () => const MultiPlayerPage(),
+          binding: BindingsBuilder(() {
+            Get.lazyPut<MultiplayerPageController>(
+                MultiplayerPageController.new);
           }))
     ]),
   ];

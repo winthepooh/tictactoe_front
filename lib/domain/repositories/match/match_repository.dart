@@ -32,4 +32,32 @@ class MatchRepository {
       print(ApiException.fromDioException(e).message);
     }
   }
+
+  Future<void> setWinner(String room_id, int id) async {
+    try {
+      await api.setWinner(room_id, id);
+    } on DioException catch (e) {
+      print(ApiException.fromDioException(e).message);
+    }
+  }
+
+  Future<Map<String, dynamic>> findMatch(int id) async {
+    try {
+      Map<String, dynamic> response = (await api.findMatch(id)).data;
+      return response;
+    } on DioException catch (e) {
+      print(ApiException.fromDioException(e).message);
+      return {};
+    }
+  }
+
+  Future<MatchModel?> getMatchInfo(String id) async {
+    try {
+      Map<String, dynamic> response = (await api.findInfo(id)).data;
+      return MatchModel.fromJson(response);
+    } on DioException catch (e) {
+      print(ApiException.fromDioException(e).message);
+      return null;
+    }
+  }
 }

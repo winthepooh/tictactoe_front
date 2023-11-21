@@ -28,4 +28,35 @@ class MatchApi {
       rethrow;
     }
   }
+
+  Future<Response<dynamic>> findMatch(int id) async {
+    try {
+      final response = await apiClient
+          .post<dynamic>(ApiEndpoint.match_find, data: {"user_id": id});
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Response<dynamic>> findInfo(String id) async {
+    try {
+      final response =
+          await apiClient.get<dynamic>("${ApiEndpoint.match_info}$id");
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Response<dynamic>> setWinner(String match_id, int winner_id) async {
+    try {
+      final response = await apiClient.post<dynamic>(
+          ApiEndpoint.match_setwinner,
+          data: {"match_id": match_id, "user_id": winner_id});
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

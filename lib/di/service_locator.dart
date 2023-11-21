@@ -4,6 +4,7 @@ import 'package:tictactoe/domain/repositories/user/user_repository.dart';
 import 'package:tictactoe/services/network/api/match_api.dart';
 import 'package:tictactoe/services/network/api/user_api.dart';
 import 'package:tictactoe/services/network/api_client.dart';
+import 'package:tictactoe/services/socket/socketcmd.dart';
 import 'package:tictactoe/services/stores/tic_store.dart';
 
 final getIt = GetIt.instance;
@@ -15,5 +16,6 @@ Future<void> setUp() async {
     ..registerSingleton(UserRepository(api: getIt<UserApi>()))
     ..registerSingleton(TicStore())
     ..registerSingleton(MatchApi(apiClient: getIt<ApiClient>()))
-    ..registerSingleton(MatchRepository(api: getIt<MatchApi>()));
+    ..registerSingleton(MatchRepository(api: getIt<MatchApi>()))
+    ..registerSingleton(SocketCMD());
 }

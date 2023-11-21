@@ -11,4 +11,5 @@ class Paths {
   static const String HISTORY = '/history';
   static const String SELECTMODE = '/selectmode';
   static const String PLAYAI = '/playai';
+  static const String MULTIPLAYER = '/playmultiplayer';
 }

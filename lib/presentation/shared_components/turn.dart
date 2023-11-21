@@ -4,7 +4,8 @@ import 'package:tictactoe/common/styles/app_text_style.dart';
 
 class PlayTurn extends StatelessWidget {
   final bool isMyTurn;
-  const PlayTurn({super.key, required this.isMyTurn});
+  final String? name;
+  const PlayTurn({super.key, required this.isMyTurn, this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class PlayTurn extends StatelessWidget {
           color: isMyTurn ? Colors.green : Colors.red),
       child: Center(
           child: Text(
-        isMyTurn ? "YOUR TURN" : "ENEMY TURN",
+        isMyTurn ? "YOUR TURN" : "${name ?? "ENENY"} TURN",
         style: AppTextStyle.popBlackSemiBoldTextStyle
             .copyWith(fontSize: 30.sp, color: Colors.white),
       )),

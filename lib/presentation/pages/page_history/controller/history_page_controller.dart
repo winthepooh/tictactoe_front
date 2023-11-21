@@ -63,7 +63,12 @@ class HistoryPageController extends GetxController {
               style: AppTextStyle.popBlackRegularTextStyle
                   .copyWith(fontSize: 30.sp)),
           const Spacer(),
-          Text(myId == i.player_win_id! ? "WIN" : "LOSS",
+          Text(
+              i.player_win_id == -1
+                  ? "DRAW"
+                  : myId == i.player_win_id!
+                      ? "WIN"
+                      : "LOSS",
               style: AppTextStyle.popBlackRegularTextStyle
                   .copyWith(fontSize: 30.sp))
         ],

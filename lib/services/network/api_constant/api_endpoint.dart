@@ -8,4 +8,6 @@ class ApiEndpoint {
   static String match_find = '/match/findmatch';
   static String match_gethistory = '/match/history';
   static String match_playwithai = '/match/playwithai';
+  static String match_info = '/match/info/';
+  static String match_setwinner = '/match/setwinner';
 }
